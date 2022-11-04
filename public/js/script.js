@@ -1,12 +1,14 @@
 const base = "http://localhost";
-const base2 = "https://self-passport-google.cwchan0212.repl.co/";
+const base2 = "https://self-passport-google.cwchan0212.repl.co";
 
 function login() {
-    window.open(base + ":5000/auth/google", "_self");
+    let uri = base + ":5000/auth/google";
+    window.open(uri, "_self");
 }
 
 function logout() {
-    window.open(base + ":5000/logout", "_self");
+    let uri = base + ":5000/logout";
+    window.open(uri, "_self");
 }
 
 function changeIt(par) {
