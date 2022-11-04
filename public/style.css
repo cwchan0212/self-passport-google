@@ -1,0 +1,56 @@
+.container {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.picture {
+    width: 24px;
+    border-radius: 12px;
+}
+
+.google {
+    height: 40px;
+}
+
+.google:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+table {
+    align-self: center;
+    text-align: left;
+    font-size: 12px;
+    width: 700px;
+}
+
+.button {
+    text-align: center;
+}
+
+thead {
+  background-color:cornflowerblue;
+}
+
+thead tr {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr {
+    vertical-align: top;
+}
+
+td {
+    word-wrap: break-word;
+}
+
+.key {
+    width: 20%;
+}

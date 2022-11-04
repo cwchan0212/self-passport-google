@@ -1,0 +1,69 @@
+<% 
+    const params = ["provider", "sub", "id", "displayName", "given_name", "family_name", "email_verified", "verified", "language", "email", "picture"];
+%>
+<div class="container">
+    <h3>Passport.js - Google OAuth2</h3>
+<% 
+    if (typeof user == undefined || Object.keys(user).length == 0) { 
+%>
+    <div class="button">
+        <input
+            class="google"
+            type="image"
+            src="./img/btn_google_signin_dark_normal_web@2x.png"
+            name="submit"
+            onclick="login()"
+        />
+    </div>
+<%  } else { %>
+    <button class="btn btn-dark btn-sm" type="button" onClick="changeIt()">switch</button>
+    <table>
+        <thead>
+            <tr>
+                <td class="key">key</td>
+                <td class="value">value</td>
+            </tr>
+        </thead>
+        <tbody>
+<%
+        if (par === 1) {
+            params.forEach(function(param, index) {
+%>
+        <tr>
+          <td><%=param%></td>
+<%    
+                if (param === "picture") {
+%>
+          <td><img class="picture" src=<%=user[param]%>></td>
+<%
+                } else {
+%>
+          <td><%=user[param]%></td>
+<%
+                }
+%>
+        </tr>
+<%    
+            })
+        } else {
+            Object.keys(user).forEach(key => {
+%>
+        <tr>
+            <td><%=key%></td>
+            <td><%=user[key]%></td>
+        </tr>
+<%    
+            })
+        }  
+%>
+        </tbody>
+    </table>
+    <button class="btn btn-primary btn-sm" type="button" onClick="logout()">
+      Logout
+    </button> 
+<% 
+
+    }
+%>
+
+</div>
