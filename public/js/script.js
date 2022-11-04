@@ -1,4 +1,5 @@
-const base = "https://self-passport-google.cwchan0212.repl.co/";
+const base = "http://localhost";
+const base2 = "https://self-passport-google.cwchan0212.repl.co/";
 
 function login() {
     window.open(base + ":5000/auth/google", "_self");

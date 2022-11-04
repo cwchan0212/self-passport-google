@@ -5,13 +5,13 @@ require("dotenv").config();
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
-const CLIENT_URL = "https://self-passport-google.cwchan0212.repl.co"
+const CLIENT_URL = process.env.CLIENT_URL;
 passport.use(
     new GoogleStrategy(
         {
             clientID: GOOGLE_CLIENT_ID,
             clientSecret: GOOGLE_CLIENT_SECRET,
-            callbackURL: CLIENT_URL + ":5000/google/callback",
+            callbackURL: CLIENT_URL + "/google/callback",
             passReqToCallback: true,
         },
         function (request, accessToken, refreshToken, profile, done) {
